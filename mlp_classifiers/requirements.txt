@@ -1,0 +1,10 @@
+numpy
+polars
+matplotlib
+seaborn
+colorcet
+toolz
+tqdm
+scikit-learn
+tensorflow
+torch
