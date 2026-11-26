@@ -1,0 +1,9 @@
+Job ID: 812409
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 11:03:26 -05 2026
+Tarea 4 en nodei-9, 4 cores
+[4] LGBM_smotenc | cores=4
+Fitting 4 folds for each of 576 candidates, totalling 2304 fits
+RESULTADO: {'tag': 'LGBM_smotenc', 'best_params': {'lightgbm__learning_rate': 0.1, 'lightgbm__max_depth': 10, 'lightgbm__n_estimators': 1200, 'lightgbm__reg_alpha': 0.0, 'lightgbm__reg_lambda': 1.0}, 'best_score': np.float64(0.9330927051671731), 'elapsed_s': 965.927943944931}
+End:    Tue Nov 24 11:19:40 -05 2026

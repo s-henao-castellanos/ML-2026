@@ -1,0 +1,9 @@
+Job ID: 812395
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 10:59:58 -05 2026
+Tarea 0 en nodei-9, 4 cores
+[0] AdaBoost_smotenc | cores=4
+Fitting 4 folds for each of 64 candidates, totalling 256 fits
+RESULTADO: {'tag': 'AdaBoost_smotenc', 'best_params': {'adaboost__estimator__max_depth': 4, 'adaboost__learning_rate': 0.5, 'adaboost__n_estimators': 600}, 'best_score': np.float64(0.9252986062154009), 'elapsed_s': 536.1151781082153}
+End:    Tue Nov 24 11:09:27 -05 2026

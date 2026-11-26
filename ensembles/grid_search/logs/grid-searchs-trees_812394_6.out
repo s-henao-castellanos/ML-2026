@@ -1,0 +1,9 @@
+Job ID: 812411
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 11:07:26 -05 2026
+Tarea 6 en nodei-9, 4 cores
+[6] LGBM_ros | cores=4
+Fitting 4 folds for each of 576 candidates, totalling 2304 fits
+RESULTADO: {'tag': 'LGBM_ros', 'best_params': {'lightgbm__learning_rate': 0.05, 'lightgbm__max_depth': -1, 'lightgbm__n_estimators': 800, 'lightgbm__reg_alpha': 0.1, 'lightgbm__reg_lambda': 0.0}, 'best_score': np.float64(0.9743382123499024), 'elapsed_s': 838.8347716331482}
+End:    Tue Nov 24 11:21:32 -05 2026

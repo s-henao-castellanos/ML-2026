@@ -1,0 +1,9 @@
+Job ID: 812413
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 11:12:12 -05 2026
+Tarea 8 en nodei-9, 4 cores
+[8] XGBoost_smotenc | cores=4
+Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
+RESULTADO: {'tag': 'XGBoost_smotenc', 'best_params': {'xgboost__gamma': 0.1, 'xgboost__learning_rate': 0.03, 'xgboost__max_depth': 3, 'xgboost__n_estimators': 200, 'xgboost__reg_alpha': 5.0, 'xgboost__reg_lambda': 0.0}, 'best_score': np.float64(0.9538108047199141), 'elapsed_s': 2542.9939575195312}
+End:    Tue Nov 24 11:54:43 -05 2026

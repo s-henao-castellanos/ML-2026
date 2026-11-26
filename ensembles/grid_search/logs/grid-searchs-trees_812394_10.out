@@ -1,0 +1,9 @@
+Job ID: 812419
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 11:19:59 -05 2026
+Tarea 10 en nodei-9, 4 cores
+[10] XGBoost_ros | cores=4
+Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
+RESULTADO: {'tag': 'XGBoost_ros', 'best_params': {'xgboost__gamma': 0, 'xgboost__learning_rate': 0.1, 'xgboost__max_depth': 3, 'xgboost__n_estimators': 1200, 'xgboost__reg_alpha': 0.0, 'xgboost__reg_lambda': 0.0}, 'best_score': np.float64(0.980610676436257), 'elapsed_s': 2198.879979610443}
+End:    Tue Nov 24 11:56:45 -05 2026
