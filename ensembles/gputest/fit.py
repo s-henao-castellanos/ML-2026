@@ -22,17 +22,18 @@ X_test = joblib.load(f"{data_prefix}/X_test.joblib")
 print("Data loaded")
 
 clf = TabPFNClassifier(
+    device="cuda",
     eval_metric="f1",
     balance_probabilities=True,
-    n_estimators=100,
-    ignore_pretraining_limits=True,
+    n_estimators=4,
+#    ignore_pretraining_limits=True,
     memory_saving_mode=True,
 #    tuning_config={
 #        "tune_decision_thresholds": True,
 #    },
-    inference_config={
-        "SUBSAMPLE_SAMPLES": 150, # lower if still OOM
-    }
+#    inference_config={
+#        "SUBSAMPLE_SAMPLES": 100, # lower if still OOM
+#    }
 )
 
 ##
@@ -44,7 +45,7 @@ try:
 except:
     pass
 
-N = 2000
+N = 5000
 
 clf.fit(X_train.iloc[:N,:], y_train.iloc[:N])
 
