@@ -17,10 +17,10 @@ echo "Node:   $SLURMD_NODENAME"
 echo "Start:  $(date)"
 
 module load cuda
-nvidia-smi
+#nvidia-smi
 
 
-cat /proc/self/cgroup
+#cat /proc/self/cgroup
 
 export TABPFN_TOKEN="tabpfn_sk_61TBAkdW3FNl93F_tAcRfL_qWrclpo8v12aRH1okghI"
 export OMP_NUM_THREADS=4

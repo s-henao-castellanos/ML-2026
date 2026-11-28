@@ -1,0 +1,13 @@
+Job ID: 829903
+Node:   nodei-gpu-2
+Start:  Sat Nov 28 00:47:38 -05 2026
+Address space limit: (18897856102, 18897856102)
+Data segment limit: (-1, -1)
+Stack limit: (8388608, -1)
+Data loaded
+Model defined
+Model fitted
+Inference tested
+predictions done and saved
+model saved
+End:    Sat Nov 28 00:49:19 -05 2026
