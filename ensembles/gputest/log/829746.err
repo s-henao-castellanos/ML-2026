@@ -1,0 +1,47 @@
+/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/classifier.py:1211: UserWarning: You specified 'ClassifierEvalMetrics.F1' as the eval metric but haven't specified any tuning configuration. Consider configuring tuning via the `tuning_config` argument of the TabPFNClassifier to improve predictive performance.
+  self._maybe_calibrate_temperature_and_tune_decision_thresholds(
+Traceback (most recent call last):
+  File "/hpcfs/home/fisica/s.henao10/ML-2026/ensembles/gputest/fit.py", line 55, in <module>
+    y_pred = clf.predict(X_test)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/classifier.py", line 1917, in predict
+    probas = self._predict_proba(X=X)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/classifier.py", line 1989, in _predict_proba
+    self._raw_predict(X, return_logits=False).float().detach().cpu().numpy()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/classifier.py", line 1889, in _raw_predict
+    with handle_oom_errors(
+         ^^^^^^^^^^^^^^^^^^
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/errors.py", line 207, in handle_oom_errors
+    raise TabPFNCUDAOutOfMemoryError(
+tabpfn.errors.TabPFNCUDAOutOfMemoryError: CUDA out of memory with 1,778 test samples.
+
+This is issue is usually caused by one of the following two reasons:
+
+1) Large test set — split into batches:
+
+    predictions = []
+    for i in range(0, len(X_test), 100):
+        pred = model.predict_proba(X_test[i:i + 100])
+        predictions.append(pred)
+    predictions = np.vstack(predictions)
+
+   Only with fit_mode='fit_with_cache', test rows are chunked
+   automatically — lower the TABPFN_MAX_BATCHED_TEST_ROWS
+   environment variable (currently 32768) to
+   reduce peak memory without changing your code.
+
+2) Large training set — batching won't help.
+   Subsample your training data; see https://docs.priorlabs.ai
+   for further guidance.
+
+Your sizes: 2,001 train / 1,778 test samples, 25 features.
+Not sure which? If model.predict_proba(X_test[:1]) also fails, it's (2).
+
+Original error: CUDA out of memory. Tried to allocate 384.00 MiB. GPU 0 has a total capacity of 22.17 GiB of which 17.54 GiB is free. Including non-PyTorch memory, this process has 4.62 GiB memory in use. Of the allocated memory 3.37 GiB is allocated by PyTorch, and 406.98 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

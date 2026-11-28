@@ -1,0 +1,2 @@
+/hpcfs/home/fisica/s.henao10/micromamba/envs/torch_gpu/lib/python3.12/site-packages/tabpfn/classifier.py:1211: UserWarning: You specified 'ClassifierEvalMetrics.F1' as the eval metric but haven't specified any tuning configuration. Consider configuring tuning via the `tuning_config` argument of the TabPFNClassifier to improve predictive performance.
+  self._maybe_calibrate_temperature_and_tune_decision_thresholds(
