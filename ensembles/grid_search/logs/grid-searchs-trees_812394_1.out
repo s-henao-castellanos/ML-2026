@@ -1,0 +1,9 @@
+Job ID: 812396
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 10:59:58 -05 2026
+Tarea 1 en nodei-9, 4 cores
+[1] AdaBoost_rus | cores=4
+Fitting 4 folds for each of 64 candidates, totalling 256 fits
+RESULTADO: {'tag': 'AdaBoost_rus', 'best_params': {'adaboost__estimator__max_depth': 1, 'adaboost__learning_rate': 0.3, 'adaboost__n_estimators': 600}, 'best_score': np.float64(0.8799332417043), 'elapsed_s': 174.97033786773682}
+End:    Tue Nov 24 11:03:25 -05 2026

@@ -1,0 +1,9 @@
+Job ID: 812398
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 10:59:58 -05 2026
+Tarea 3 en nodei-9, 4 cores
+[3] AdaBoost_none | cores=4
+Fitting 4 folds for each of 64 candidates, totalling 256 fits
+RESULTADO: {'tag': 'AdaBoost_none', 'best_params': {'adaboost__estimator__max_depth': 1, 'adaboost__learning_rate': 0.5, 'adaboost__n_estimators': 200}, 'best_score': np.float64(0.874532504932073), 'elapsed_s': 287.749742269516}
+End:    Tue Nov 24 11:05:18 -05 2026

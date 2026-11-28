@@ -1,0 +1,9 @@
+Job ID: 812412
+Node:   nodei-9
+CPUs:   4
+Start:  Tue Nov 24 11:09:27 -05 2026
+Tarea 7 en nodei-9, 4 cores
+[7] LGBM_none | cores=4
+Fitting 4 folds for each of 576 candidates, totalling 2304 fits
+RESULTADO: {'tag': 'LGBM_none', 'best_params': {'lightgbm__learning_rate': 0.03, 'lightgbm__max_depth': 6, 'lightgbm__n_estimators': 200, 'lightgbm__reg_alpha': 5.0, 'lightgbm__reg_lambda': 5.0}, 'best_score': np.float64(0.8669614223069947), 'elapsed_s': 624.7946088314056}
+End:    Tue Nov 24 11:19:59 -05 2026
