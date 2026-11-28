@@ -45,7 +45,7 @@ try:
 except:
     pass
 
-N = 5000
+N = len(X_train)-1 #5000
 
 clf.fit(X_train.iloc[:N,:], y_train.iloc[:N])
 
