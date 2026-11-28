@@ -24,13 +24,13 @@ print("Data loaded")
 clf = TabPFNClassifier(
     eval_metric="f1",
     balance_probabilities=True,
-#    n_estimators=16,
+    n_estimators=16,
 #    tuning_config={
 #        "tune_decision_thresholds": True,
 #    },
-#    inference_config={
-#        "SUBSAMPLE_SAMPLES": 10_000, # lower if still OOM
-#    }
+    inference_config={
+        "SUBSAMPLE_SAMPLES": 16_000, # lower if still OOM
+    }
 )
 
 ##
@@ -42,7 +42,7 @@ try:
 except:
     pass
 
-N = 1001
+N = 1201
 
 clf.fit(X_train.iloc[:N,:], y_train.iloc[:N])
 
@@ -52,9 +52,15 @@ clf.predict_proba(X_test.iloc[:1,:])
 
 print("Inference tested")
 
-y_pred = clf.predict(X_test)
+predictions = []
+for i in range(0, len(X_test), 100):
+    pred = clf.predict_proba(X_test.iloc[i:i + 100])
+    predictions.append(pred)
+predictions = np.vstack(predictions)
 
-np.save("tabpfn_y_pred",y_pred)
+#y_pred = clf.predict(X_test)
+
+np.save("tabpfn_y_pred", predictions)
 
 print("predictions done and saved")
 
